@@ -318,11 +318,6 @@ Options:
   <project path=".config/alacritty" name="alacritty_conf" remote="origin" revision="refs/heads/master"/>
 ```
 
-**this will do the following things:**
-
-1. mkdir the .config/alacritty directory in pwd
-2. git clone https://github.com/ABigBright/alacritty_conf .config/alacritty -b master
-
 # Getting Started
 
 1. curl -fLo repo --create-dirs -H "Accept: application/vnd.github.v3.raw"  https://api.github.com/repos/ABigBright/tools_repo/contents/repo
@@ -331,5 +326,21 @@ Options:
 4. repo sync
 5. repo start master --all
 6. check all the repository whether is right!!!
+
+# What do these cmd do
+
+**repo init -u https://github.com/ABigBright/my_linux_conf will do the following things:**
+
+1. mkdir .repo directory
+2. git clone google `repo` repository into .repo/repo
+> we use the https://mirrors.tuna.tsinghua.edu.cn/git/git-repo for google `repo` mirror to speed up the git clone 
+3. git clone https://github.com/ABigBright/my_linux_conf .repo/manifests 
+> store the .git misc meta date into .repo/manifests.git
+
+
+**repo sync will do the following things:**
+
+1. mkdir the .config/alacritty directory in pwd
+2. git clone https://github.com/ABigBright/alacritty_conf .config/alacritty -b master
 
 This is a repo python script to manage multiple git repository example for learning the repo mechnism
